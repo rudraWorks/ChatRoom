@@ -56,7 +56,7 @@ sendMessageForm.addEventListener('submit',(e)=>{
 
     const msg = sendMessageForm.message.value
     sendMessageForm.message.value=""
-    socket.emit('messageFromUser',msg)
+    socket.emit('messageFromUser',msg)  
 })
 
 const scrollToBottom = (node) => {
