@@ -1,4 +1,4 @@
-const socket = io()
+const socket =  io({transports: ['websocket'], upgrade: false});
 
 const {username,room} = Qs.parse(location.search,{ignoreQueryPrefix:true})
 const messageBox = document.getElementById('messageBox')

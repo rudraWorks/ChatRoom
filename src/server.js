@@ -14,7 +14,7 @@ const io = socketio(server)
 app.use(express.json())
 app.use(express.static(join(__dirname,'../public')))
 
-
+io.set('transports', ['websocket']);
 io.on('connection',(socket)=>{
     console.log('connected to '+socket.id)
 
