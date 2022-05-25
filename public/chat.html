@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatRoom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+            font-family: 'Grape Nuts', cursive;
+        }
+        .container{
+            display: grid;
+            height: 100%;
+            grid-template-columns: repeat(12,1fr);
+            grid-template-rows: 1fr 2fr 2fr 2fr 2fr ;
+            grid-template-areas: "a a a b b b b b b b b b"
+                                 "a a a b b b b b b b b b"
+                                 "a a a b b b b b b b b b"
+                                 "a a a b b b b b b b b b"
+                                 "a a a c c c c c c c c c"
+                                 "a a a c c c c c c c c c";
+        }
+        #panel{
+            grid-area: a;
+            background-color: rgb(15, 15, 59);
+            text-align: center;
+            padding: 10px;
+            overflow: scroll;
+        }
+        #panel>li{
+            color:yellow;
+        }
+        #messageBox{
+            grid-area: b;
+            background-color: rgb(18, 161, 137);
+            overflow: scroll;
+            padding: 10px;
+        }
+        #control{
+            grid-area: c;
+            background-color: rgb(7, 87, 90);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #messageInput{
+            width: 300px;
+            height: 50px;
+        }
+        #messageButton{
+            width: 50px;
+            height: 50px;
+        }
+        #participants{
+            margin-top: 20px;
+        }
+
+        @media only screen and (max-width:768px) {
+
+            .container{
+           
+            grid-template-columns: repeat(12,1fr);
+            grid-template-rows: 1fr 2fr 2fr 2fr 2fr ;
+            grid-template-areas: "a a a a a a a a a a a a"
+                                 "a a a a a a a a a a a a"
+                                 "b b b b b b b b b b b b"
+                                 "b b b b b b b b b b b b"
+                                 "c c c c c c c c c c c c"
+                                ;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="panel">
+            <h1 style="color: aquamarine;">ChatRoom By Rudra</h1><br>
+            <h1 id="roomName" ></h1><h2 id='currentUser'></h2>
+            <h3 id="participants"></h3>
+        </div>
+        <div id="messageBox"></div>
+        <div id="control">
+          <form id="sendMessageForm">
+            <input placeholder="message" name="message" autocomplete="off" id="messageInput">
+            <button id="messageButton">Send</button>
+          </form>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/client.js"></script>
+</body>
+</html>
+       
+ 

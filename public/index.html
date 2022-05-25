@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: scroll;
+            font-family: 'Grape Nuts', cursive;
+        }
+        .container{
+
+            background-color: rgb(126, 198, 226);
+            padding: 30px;
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        input{
+            border-radius: 10px;
+            padding: 10px;
+            font-family: 'Grape Nuts', cursive;
+            font-weight: 900;
+            font-size: 20px;
+        }
+        button{
+            padding: 10px;
+            border-radius: 10px;
+            font-family: 'Grape Nuts', cursive;
+            font-weight: 900;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ChatRoom by Rudra</h1><br>
+    <div class="container">
+        <h1>Join the room!</h1><br>
+        <form action="/chat.html">
+            <input name="username" placeholder="username" required><br>
+            <input name="room" placeholder="room" required><br>
+            <button>Join Room</button>
+        </form>
+     
+    </div>
+    <br>
+</body>
+</html>
